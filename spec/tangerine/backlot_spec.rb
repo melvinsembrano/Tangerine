@@ -22,6 +22,21 @@ describe Tangerine::Backlot do
           subject.get(request).should == response
         end
 
+        context 'when making subsequent requests' do
+
+          let(:original_params) { { 'contentType' => 'Channel' } }
+          before do
+            Tangerine::Backlot::HTTP.stub(:get)
+            Tangerine::Backlot::API.get('/query', original_params)
+          end
+          subject { Tangerine::Backlot::HTTP }
+
+          it 'clears parameters before the new request' do
+            Tangerine::Backlot::API.get('/channel_sets', 'mode' => 'list')
+            subject.default_params.keys.should_not include('contentType')
+          end
+        end
+
       end
 
     end

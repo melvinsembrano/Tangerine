@@ -28,8 +28,8 @@
       <?xml version="1.0" encoding="UTF-8"?>
       <list totalResults="5" size="5" pageID="0" statistics-as-of_text="Wed Mar 09 21:40:01 UTC 2011" limit="500" statistics-as-of="1299706801">
         <item>
-          <embedCode><%= mock_channel_set.embed_code %></embedCode>
-          <title><%= mock_channel_set.title %></title>
+          <embedCode>x5b214MTomu6ISJSgohKKZbNuR9bdUJ8</embedCode>
+          <title>Pitchfork Live</title>
           <description></description>
           <status>live</status>
           <content_type>MultiChannel</content_type>
@@ -43,8 +43,8 @@
           </stat>
         </item>
         <item>
-          <embedCode>x5b214MTomu6ISJSgohKKZbNuR9bdUJ8</embedCode>
-          <title>Pitchfork Live</title>
+          <embedCode><%= mock_channel_set.embed_code %></embedCode>
+          <title><%= mock_channel_set.title %></title>
           <description></description>
           <status>live</status>
           <content_type>MultiChannel</content_type>

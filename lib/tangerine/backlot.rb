@@ -4,6 +4,7 @@ require 'digest/sha2'
 
 module Tangerine
   module Backlot
+
     class HTTP
       include HTTParty
       base_uri 'http://api.ooyala.com/partner'
@@ -17,17 +18,22 @@ module Tangerine
       end
 
       def self.get(request_type, params={})
-        HTTP.default_params :signature => self.signature(params)
-        HTTP.default_params :pcode => @provider_code
+        set_params(params)
         HTTP.get(request_type)
       end
 
-      # TODO: Refactor this method since it's doing double-duty ... not sure why Ooyala API doesn't like
-      # it if we assign some values to params instead of default params
-      def self.signature(params)
+      def self.set_params(params)
+        HTTP.default_params.clear
+
         params['expires'] ||= (Time.now.to_i + 10).to_s
+        HTTP.default_params params
+
+        HTTP.default_params :pcode => @provider_code
+        HTTP.default_params :signature => self.signature(params)
+      end
+
+      def self.signature(params)
         string_to_sign = params.keys.sort.inject(@secret) do |memo, key|
-          HTTP.default_params key => params[key]
           memo += "#{key}=#{params[key]}"
         end
         digest = Digest::SHA256.digest(string_to_sign)
@@ -36,6 +42,10 @@ module Tangerine
 
     end
 
+  end
+
+  def self.query(options)
+    Tangerine::Backlot::API.get('/query', options)
   end
 end
 

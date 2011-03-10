@@ -1,4 +1,4 @@
-class Tangerine::ChannelSet
+class Tangerine::ChannelSet < Tangerine::Base
 
   attr_accessor :embed_code,
                 :title,
@@ -12,19 +12,22 @@ class Tangerine::ChannelSet
                 :height,
                 :stat
 
-  def initialize(options)
-    options.delete('content_type')
-    options.each do |k,v|
-      # TODO: Look into using Crack gem for reliably undercoring these
-      attr = k.to_s.underscore
-      self.send("#{attr}=", v)
-      # TODO: move into Base class
-    end
+  finder do
+    response = Tangerine.query('contentType' => 'MultiChannel')
+    response.parsed_response['list']['item']
   end
 
   def self.find(embed_code)
-    result = Tangerine::Query.new('contentType' => 'MultiChannel')
-    meh = result.response.parsed_response['list']['item'].first
-    Tangerine::ChannelSet.new(meh)
+    found = super(embed_code)
+    Tangerine::ChannelSet.new(found)
   end
+
+  def channels
+    result = Tangerine::Backlot::API.get('/channel_sets', 'mode' => 'list', 'channelSetEmbedCode' => embed_code)
+    items = result.parsed_response['channelSet']['channel']
+    items = Tangerine::Base.prepare_items(items)
+    items.collect {|item| Tangerine::Channel.new(item) }
+  end
+
 end
+

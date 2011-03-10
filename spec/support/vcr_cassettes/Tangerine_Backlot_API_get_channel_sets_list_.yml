@@ -1,0 +1,47 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://api.ooyala.com:80/partner/channel_sets?channelSetEmbedCode=85aTdiMjoYR5K26Fp8TMgGtGQUCEC2Y1&pcode=lsNTrbQBqCQbH-VA6ALCshAHLWrV&signature=awYsnC3RpS4PN%2BXZGuFZTizUi5VAXTsAngkuuFwyoSg&expires=1325437210&mode=list
+    body: 
+    headers: 
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      last-modified: 
+      - Thu, 10 Mar 2011 21:02:45 GMT
+      content-type: 
+      - application/xml; charset=utf-8
+      date: 
+      - Thu, 10 Mar 2011 21:02:45 GMT
+      content-length: 
+      - "659"
+      set-cookie: 
+      - ooyala-web-rails-session=BAh7CDoPdXBkYXRlZF9hdEl1OglUaW1lDVXJG4DkXtQKBjofQG1hcnNoYWxfd2l0aF91dGNfY29lcmNpb25UOg9zZXNzaW9uX2lkIiVlMjM0ZjgwNjRiMGM2NWNjNzk5ZjVkNGNjNjE1OGVmNToSY3JlYXRpb25fdGltZUAG--1930e6d8333b31d5ee4bb86dc935478d6db5b4bd; path=/; HttpOnly
+      vary: 
+      - Accept-Encoding,User-Agent
+      cache-control: 
+      - private, max-age=0
+    body: |
+      <?xml version="1.0" encoding="UTF-8"?>
+      <channelSet>
+        <embedCode>85aTdiMjoYR5K26Fp8TMgGtGQUCEC2Y1</embedCode>
+        <title>Brand Site Video Gallery</title>
+        <status>live</status>
+        <channel>
+          <embedCode>9haTdiMjoVHPey7H15JCroS9tJ25Xzw2</embedCode>
+          <title><%= title %></title>
+          <description></description>
+          <status>live</status>
+          <content_type>Channel</content_type>
+          <uploadedAt>1299603290</uploadedAt>
+          <length>258007</length>
+          <thumbnail>http://cdn.videos.thenorthface.com/I3MHB2MTqP5zvA8dYvzbvGlPJdg7DxRK/M_-lZjo5g2zgfr_H5hMDoxOjA0O88asB</thumbnail>
+          <size>0</size>
+          <updatedAt>1299603448</updatedAt>
+        </channel>
+      </channelSet>
+
+    http_version: "1.1"

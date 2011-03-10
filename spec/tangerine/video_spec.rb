@@ -9,10 +9,9 @@ describe Tangerine::Video do
     describe '.all' do
 
       let(:mock_response) { mock }
-      let(:query_double) { double(:response => mock_response) }
       let(:params) { {'contentType' => 'Video'} }
       subject { Tangerine::Video.all }
-      before { Tangerine::Query.should_receive(:new).with(params).and_return(query_double) }
+      before { Tangerine.should_receive(:query).with(params).and_return(mock_response) }
 
       it 'returns the response of the query' do
         subject.should == mock_response

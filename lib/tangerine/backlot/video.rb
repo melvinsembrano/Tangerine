@@ -1,6 +1,6 @@
 class Tangerine::Video
   def self.all
-    Tangerine::Query.new('contentType' => 'Video').response
+    Tangerine.query('contentType' => 'Video')
   end
 end
 
