@@ -1,0 +1,13 @@
+pairs:
+  aw: Alex Welch; alexwelch
+  jz: Jay Zeschin; jayzes
+  ja: Josh Abbott; joshua.abbott
+  br: Brian Rose
+  gd: Grant Davis
+  an: Anthony Navarre; anthony.navarre
+  rr: Ryan Rabon; ryan.rabon
+  cw: Craig Williams; craig.williams
+  tl: Terrence Lee; terrence.lee
+email:
+  prefix: pair
+  domain: factorylabs.com
