@@ -1,0 +1,107 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://api.ooyala.com:80/partner/query?pcode=lsNTrbQBqCQbH-VA6ALCshAHLWrV&expires=1325437210&signature=VAJNytKwToVNKastKoAoWArxXky58qE2B4CDGMQhJXY&contentType=MultiChannel
+    body: 
+    headers: 
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      last-modified: 
+      - Wed, 09 Mar 2011 22:17:59 GMT
+      content-type: 
+      - application/xml; charset=utf-8
+      date: 
+      - Wed, 09 Mar 2011 22:17:58 GMT
+      content-length: 
+      - "2336"
+      set-cookie: 
+      - ooyala-web-rails-session=BAh7CDoPdXBkYXRlZF9hdEl1OglUaW1lDTbJG4Bt76pHBjofQG1hcnNoYWxfd2l0aF91dGNfY29lcmNpb25UOg9zZXNzaW9uX2lkIiUzMzcyMTM4MjM4NTQyZTM0NTIxMTJmMjQ3NWU2YTZiOToSY3JlYXRpb25fdGltZUAG--ac51682d0ac32ee8a4f963e2dc7803e400ce56ad; path=/; HttpOnly
+      vary: 
+      - Accept-Encoding,User-Agent
+      cache-control: 
+      - private, max-age=0
+    body: |
+      <?xml version="1.0" encoding="UTF-8"?>
+      <list totalResults="5" size="5" pageID="0" statistics-as-of_text="Wed Mar 09 21:40:01 UTC 2011" limit="500" statistics-as-of="1299706801">
+        <item>
+          <embedCode><%= mock_channel_set.embed_code %></embedCode>
+          <title><%= mock_channel_set.title %></title>
+          <description></description>
+          <status>live</status>
+          <content_type>MultiChannel</content_type>
+          <uploadedAt>1294087113</uploadedAt>
+          <size></size>
+          <updatedAt>1294087113</updatedAt>
+          <flightStartTime>1294087113</flightStartTime>
+          <width>4</width>
+          <height>3</height>
+          <stat>
+          </stat>
+        </item>
+        <item>
+          <embedCode>x5b214MTomu6ISJSgohKKZbNuR9bdUJ8</embedCode>
+          <title>Pitchfork Live</title>
+          <description></description>
+          <status>live</status>
+          <content_type>MultiChannel</content_type>
+          <uploadedAt>1294087170</uploadedAt>
+          <size></size>
+          <updatedAt>1294087170</updatedAt>
+          <flightStartTime>1294087170</flightStartTime>
+          <width>4</width>
+          <height>3</height>
+          <stat>
+          </stat>
+        </item>
+        <item>
+          <embedCode>IwcG14MTrZJnBFuyM9s7XhY6QAe4qZdd</embedCode>
+          <title>Pitchfork Live</title>
+          <description></description>
+          <status>live</status>
+          <content_type>MultiChannel</content_type>
+          <uploadedAt>1294087178</uploadedAt>
+          <size></size>
+          <updatedAt>1294087179</updatedAt>
+          <flightStartTime>1294087178</flightStartTime>
+          <width>4</width>
+          <height>3</height>
+          <stat>
+          </stat>
+        </item>
+        <item>
+          <embedCode>YxcG14MToeDeUlMIpHGN7LGyFIQGh80-</embedCode>
+          <title>Pitchfork Live</title>
+          <description></description>
+          <status>live</status>
+          <content_type>MultiChannel</content_type>
+          <uploadedAt>1294087189</uploadedAt>
+          <size></size>
+          <updatedAt>1294087189</updatedAt>
+          <flightStartTime>1294087189</flightStartTime>
+          <width>4</width>
+          <height>3</height>
+          <stat>
+          </stat>
+        </item>
+        <item>
+          <embedCode>YycG14MTpdUGpQQifQQYXyMVx4WwvOjy</embedCode>
+          <title>Pitchfork Live</title>
+          <description></description>
+          <status>live</status>
+          <content_type>MultiChannel</content_type>
+          <uploadedAt>1294087199</uploadedAt>
+          <size></size>
+          <updatedAt>1294087200</updatedAt>
+          <flightStartTime>1294087199</flightStartTime>
+          <width>4</width>
+          <height>3</height>
+          <stat>
+          </stat>
+        </item>
+      </list>
+
+    http_version: "1.1"
