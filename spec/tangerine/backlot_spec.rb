@@ -11,17 +11,17 @@ describe Tangerine::Backlot do
   describe Tangerine::Backlot::API do
     context 'class methods' do
       subject { Tangerine::Backlot::API }
-      let(:params) { {'some_key' => 'some_value'} }
 
-      # it { puts subject.get('/query', 'contentType' => 'MultiChannel').inspect }
       describe '.get' do
+
         let(:response) { mock }
         let(:request) { '/some-request-path' }
-        before { Tangerine::Backlot::HTTP.should_receive(:get).with(request).and_return(response) }
 
         it 'returns the HTTP response' do
-          subject.get(request, params).should == response
+          Tangerine::Backlot::HTTP.should_receive(:get).with(request).and_return(response)
+          subject.get(request).should == response
         end
+
       end
 
     end
