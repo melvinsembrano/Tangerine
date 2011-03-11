@@ -1,0 +1,59 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://api.ooyala.com:80/partner/channels?pcode=lsNTrbQBqCQbH-VA6ALCshAHLWrV&expires=1325437210&mode=list&signature=Xe%2B2%2B2TJc6bnWCOYpC33uHXEvVykP3fK5GQwYReXac4&channelEmbedCode=9haTdiMjoVHPey7H15JCroS9tJ25Xzw2
+    body: 
+    headers: 
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      last-modified: 
+      - Fri, 11 Mar 2011 17:32:20 GMT
+      content-type: 
+      - application/xml; charset=utf-8
+      date: 
+      - Fri, 11 Mar 2011 17:32:19 GMT
+      content-length: 
+      - "1157"
+      set-cookie: 
+      - ooyala-web-rails-session=BAh7CDoPdXBkYXRlZF9hdEl1OglUaW1lDXHJG4CI%2FD2BBjofQG1hcnNoYWxfd2l0aF91dGNfY29lcmNpb25UOg9zZXNzaW9uX2lkIiU0NjViMjY5NTJlYWQ4YWQ2YTllZGYzNDg1OThkYjc5NjoSY3JlYXRpb25fdGltZUAG--33416825151f4a1eead61415c279493e8788cdfa; path=/; HttpOnly
+      vary: 
+      - Accept-Encoding,User-Agent
+      cache-control: 
+      - private, max-age=0
+    body: |
+      <?xml version="1.0" encoding="UTF-8"?>
+      <channel>
+        <embedCode>9haTdiMjoVHPey7H15JCroS9tJ25Xzw2</embedCode>
+        <title>Snowboarding</title>
+        <status>live</status>
+        <item>
+          <embedCode>I3MHB2MTqP5zvA8dYvzbvGlPJdg7DxRK</embedCode>
+          <title><%= title %></title>
+          <description>TNF New Team Bio</description>
+          <status>live</status>
+          <content_type>Video</content_type>
+          <uploadedAt>1291860167</uploadedAt>
+          <length>218968</length>
+          <thumbnail>http://cdn.videos.thenorthface.com/I3MHB2MTqP5zvA8dYvzbvGlPJdg7DxRK/M_-lZjo5g2zgfr_H5hMDoxOjA0O88asB</thumbnail>
+          <size>146499024</size>
+          <updatedAt>1294868672</updatedAt>
+        </item>
+        <item>
+          <embedCode>Z3Y3l3MTqHOLU6LMeTNbP2O91Oq5ADxm</embedCode>
+          <title>TV SPOT KAITLYN-H.264.mov</title>
+          <description></description>
+          <status>live</status>
+          <content_type>Video</content_type>
+          <uploadedAt>1293037017</uploadedAt>
+          <length>39039</length>
+          <thumbnail>http://cdn.videos.thenorthface.com/Z3Y3l3MTqHOLU6LMeTNbP2O91Oq5ADxm/Ut_HKthATH4eww8X5hMDoxOjA0O88asB</thumbnail>
+          <size>24649650</size>
+          <updatedAt>1294868601</updatedAt>
+        </item>
+      </channel>
+
+    http_version: "1.1"

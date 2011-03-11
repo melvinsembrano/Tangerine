@@ -1,0 +1,79 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://api.ooyala.com:80/partner/query?expires=1325437210&signature=O%2B9kFOA4MbKGsw0N6mmUyrCiUApueJc04H5jWyHWMZM&fields=labels%2Cmetadata&pcode=lsNTrbQBqCQbH-VA6ALCshAHLWrV&embedCode=I3MHB2MTqP5zvA8dYvzbvGlPJdg7DxRK%2CZ3Y3l3MTqHOLU6LMeTNbP2O91Oq5ADxm
+    body: 
+    headers: 
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      last-modified: 
+      - Fri, 11 Mar 2011 22:09:13 GMT
+      content-type: 
+      - application/xml; charset=utf-8
+      date: 
+      - Fri, 11 Mar 2011 22:09:13 GMT
+      content-length: 
+      - "1693"
+      set-cookie: 
+      - ooyala-web-rails-session=BAh7CDoPdXBkYXRlZF9hdEl1OglUaW1lDXbJG4ACVNMkBjofQG1hcnNoYWxfd2l0aF91dGNfY29lcmNpb25UOg9zZXNzaW9uX2lkIiU0MTZmMDAxMTg3OWRiODE2OWU5NWYzNmQ0YzUzMTI4NToSY3JlYXRpb25fdGltZUAG--72a190cee40d77538ed4f6ec6a4d79319cde1396; path=/; HttpOnly
+      vary: 
+      - Accept-Encoding,User-Agent
+      cache-control: 
+      - private, max-age=0
+    body: |
+      <?xml version="1.0" encoding="UTF-8"?>
+      <list totalResults="2" size="2" pageID="0" statistics-as-of_text="Fri Mar 11 21:45:01 UTC 2011" limit="500" statistics-as-of="1299879901">
+        <item>
+          <embedCode>I3MHB2MTqP5zvA8dYvzbvGlPJdg7DxRK</embedCode>
+          <title><%= title1 %></title>
+          <description>TNF New Team Bio</description>
+          <status>live</status>
+          <content_type>Video</content_type>
+          <uploadedAt>1291860167</uploadedAt>
+          <length>218968</length>
+          <size>146499024</size>
+          <updatedAt>1294868672</updatedAt>
+          <flightStartTime>1291860167</flightStartTime>
+          <width>1280</width>
+          <height>720</height>
+          <labels>
+            <label>/YouTube</label>
+            <label>/testTube</label>
+          </labels>
+          <thumbnail height="72" width="128">http://cdn.videos.thenorthface.com/I3MHB2MTqP5zvA8dYvzbvGlPJdg7DxRK/M_-lZjo5g2zgfr_H5hMDoxOjA0O88asB</thumbnail>
+          <stat>
+          </stat>
+          <metadata>
+            <metadataItem value="Athlete" name="subtitle"/>
+            <metadataItem value="BigMeta!" name="bigmeta"/>
+          </metadata>
+        </item>
+        <item>
+          <embedCode>Z3Y3l3MTqHOLU6LMeTNbP2O91Oq5ADxm</embedCode>
+          <title><%= title2 %></title>
+          <description></description>
+          <status>live</status>
+          <content_type>Video</content_type>
+          <uploadedAt>1293037017</uploadedAt>
+          <length>39039</length>
+          <size>24649650</size>
+          <updatedAt>1294868601</updatedAt>
+          <flightStartTime>1293036960</flightStartTime>
+          <width>1280</width>
+          <height>720</height>
+          <labels>
+            <label>/YouTube</label>
+          </labels>
+          <thumbnail height="72" width="128">http://cdn.videos.thenorthface.com/Z3Y3l3MTqHOLU6LMeTNbP2O91Oq5ADxm/Ut_HKthATH4eww8X5hMDoxOjA0O88asB</thumbnail>
+          <stat>
+          </stat>
+          <metadata>
+          </metadata>
+        </item>
+      </list>
+
+    http_version: "1.1"

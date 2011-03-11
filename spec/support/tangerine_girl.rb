@@ -51,3 +51,11 @@ TangerineGirl.define(:channel_set) do |cs|
   # cs.width = "4"
 end
 
+TangerineGirl.define(:channel) do |ch|
+  ch.embed_code = 'lorem ipsum embed'
+end
+
+TangerineGirl.define(:video) do |v|
+  v.embed_code = 'video embed code'
+  v.title = ''
+end
