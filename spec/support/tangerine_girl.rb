@@ -40,15 +40,15 @@ end
 TangerineGirl.define(:channel_set) do |cs|
   cs.embed_code = "BLABLABLALBLABLABLBAHHH!!!!"
   cs.title = "an ode to channelsets"
-  # cs.description = nil
-  # cs.flight_start_time = "1294087113"
-  # cs.height = "3"
-  # cs.size = nil
-  # cs.stat = nil
-  # cs.status = "live"
-  # cs.updated_at = "1294087113"
-  # cs.uploaded_at = "1294087113"
-  # cs.width = "4"
+  cs.description = nil
+  cs.flight_start_time = "1294087113"
+  cs.height = "3"
+  cs.size = nil
+  cs.stat = nil
+  cs.status = "live"
+  cs.updated_at = "1294087113"
+  cs.uploaded_at = "1294087113"
+  cs.width = "4"
 end
 
 TangerineGirl.define(:channel) do |ch|

@@ -6,21 +6,31 @@ describe Tangerine::ChannelSet do
   let(:embed_code) { 'My Awesome Embed Code' }
   let(:title) { 'My Awesome Title' }
   let(:mock_channel_set) { double(:embed_code => embed_code, :title => title) }
-  let(:vcr_erb) { {:mock_channel_set => mock_channel_set} }
-  let(:channel_set) do
-    TangerineGirl.create(:channel_set, :embed_code => embed_code, :title => title)
+  let(:vcr_erb) { {:channel_sets => channel_sets} }
+  let(:channel_set) { TangerineGirl.create(:channel_set, :embed_code => embed_code, :title => title) }
+  let(:channel_sets) do
+    channel_sets = []
+    5.times { channel_sets << TangerineGirl.create(:channel_set) }
+    channel_sets << channel_set
+    channel_sets
   end
 
-  context 'retreiving a specific channelset' do
+  context 'retreiving channelsets' do
+
+    before do
+      pause_vcr "query/channel_sets", vcr_erb
+    end
+    after { play_vcr }
+
+    describe '.all' do
+      it 'returns an array of ChannelSet objects' do
+        Tangerine::ChannelSet.all.map(&:embed_code).should == channel_sets.map(&:embed_code)
+      end
+    end
 
     describe '.find' do
 
       subject { Tangerine::ChannelSet.find(embed_code) }
-      before do
-        pause_vcr "query/channel_sets", vcr_erb
-      end
-
-      after { play_vcr }
       # it { should be_functionally_equivalent_to(channel_set) }
       its(:embed_code) { should == embed_code }
       its(:title) { should == title }
