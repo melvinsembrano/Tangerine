@@ -17,7 +17,7 @@ Jeweler::Tasks.new do |gem|
   gem.summary = %Q{Ooyala Backlot API Wrapper}
   gem.description = %Q{Ooyala Backlot API Wrapper. Read more about the Ooyala Backlot API at http://www.ooyala.com/support/docs/backlot_api}
   gem.email = "anthony.navarre@factorylabs.com"
-  gem.authors = ["Anthony Navarre"]
+  gem.authors = ["Anthony Navarre", "Craig Williams"]
 
   # Dependencies
   gem.add_dependency 'httparty'
