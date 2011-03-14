@@ -11,7 +11,7 @@ describe Tangerine::Video do
     let(:title2) { 'batmitten' }
     let(:vcr_erb) { {:title1 => title1, :title2 => title2} }
     before do
-      pause_vcr "Tangerine.query('embedCode' => [embed_codes])", vcr_erb
+      pause_vcr "query/embed_code", vcr_erb
     end
     after { play_vcr }
 

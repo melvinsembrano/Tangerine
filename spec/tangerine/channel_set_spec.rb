@@ -17,7 +17,7 @@ describe Tangerine::ChannelSet do
 
       subject { Tangerine::ChannelSet.find(embed_code) }
       before do
-        pause_vcr "Tangerine::Query.new('contentType' => 'MultiChannel')", vcr_erb
+        pause_vcr "query/channel_sets", vcr_erb
       end
 
       after { play_vcr }
@@ -37,7 +37,7 @@ describe Tangerine::ChannelSet do
 
       before do
         Tangerine::ChannelSet.stub(:find).with(embed_code).and_return(channel_set)
-        pause_vcr "Tangerine::Backlot::API.get('channel_sets', 'list')", vcr_erb
+        pause_vcr "channel_sets/show", vcr_erb
       end
       after { play_vcr }
       subject { Tangerine::ChannelSet.find(embed_code) }

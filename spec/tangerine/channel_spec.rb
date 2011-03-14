@@ -29,7 +29,7 @@ describe Tangerine::Channel do
         Tangerine::Video.stub(:where).with(:embed_code => embed_codes).and_return(videos)
         # Tangerine.stub(:query).with('embedCode' => embed_codes.join(',')).and_return(videos)
         channel_set.stub(:channels).and_return([channel])
-        pause_vcr "Tangerine::Backlot::API.get('channels', 'list')", vcr_erb
+        pause_vcr "channels/list", vcr_erb
       end
       after { play_vcr }
       subject { channel }
