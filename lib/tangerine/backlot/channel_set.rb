@@ -17,6 +17,14 @@ class Tangerine::ChannelSet < Tangerine::Base
     response.parsed_response['list']['item']
   end
 
+  def self.all
+    items = @finder.call
+    items = Tangerine::Base.prepare_items(items)
+    items.collect do |item|
+      Tangerine::ChannelSet.new(item)
+    end
+  end
+
   def self.find(embed_code)
     found = super(embed_code)
     Tangerine::ChannelSet.new(found)
