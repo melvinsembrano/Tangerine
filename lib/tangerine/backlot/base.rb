@@ -19,9 +19,14 @@ class Tangerine::Base
   end
 
   def self.find(embed_code)
-    results = @finder.call
-    results = self.prepare_items(results)
+    results = prepare_items @finder.call(embed_code)
     found_item = results.select { |item| item['embedCode'] == embed_code }.first
+    self.new(found_item)
+  end
+
+  def self.all
+    items = prepare_items @finder.call
+    items.collect { |item| self.new(item) }
   end
 
 end
