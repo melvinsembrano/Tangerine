@@ -1,5 +1,9 @@
+Factory.sequence :embed_code do |n|
+  "embed_code_#{n}"
+end
+
 Factory.define :channel_set, :class => Tangerine::ChannelSet do |cs|
-  cs.embed_code  "BLABLABLALBLABLABLBAHHH!!!!"
+  cs.embed_code Factory.next(:embed_code)
   cs.title  "an ode to channelsets"
   cs.description  nil
   cs.flight_start_time  "1294087113"

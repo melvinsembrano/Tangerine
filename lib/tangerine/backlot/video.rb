@@ -10,22 +10,12 @@ class Tangerine::Video < Tangerine::Base
     :length,
     :status,
     :uploaded_at,
-  :flight_start_time,
-  :width,
-  :height,
-  :labels,
-  :metadata,
-    # <metadataItem name="director" value="Francis Ford Coppola"/>
-    # <metadataItem name="actor" value="Marlon Brando"/>
-  # <thumbnail height="79" width="106">
-  :stat
-    # <lifetime>
-      # <displays total="0"/>
-      # <plays total="0"/>
-      # <rewinds total="0"/>
-      # <playtime ms="0"/>
-      # <watched _25="0" _50="0" _75="0" _100="0"/>
-    # </lifetime>
+    :flight_start_time,
+    :width,
+    :height,
+    :labels,
+    :metadata,
+    :stat
 
   def self.all
     Tangerine.query('contentType' => 'Video')
