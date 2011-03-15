@@ -18,7 +18,7 @@ describe Tangerine::Backlot do
         let(:request) { '/some-request-path' }
 
         it 'returns the HTTP response' do
-          Tangerine::Backlot::HTTP.should_receive(:get).with(request).and_return(response)
+          Tangerine::Backlot::HTTP.should_receive(:get).and_return(response)
           subject.get(request).should == response
         end
 
