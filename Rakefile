@@ -21,6 +21,8 @@ Jeweler::Tasks.new do |gem|
 
   # Dependencies
   gem.add_dependency 'httparty'
+  gem.add_dependency 'activesupport'
+  gem.add_dependency 'json'
 end
 Jeweler::RubygemsDotOrgTasks.new
 

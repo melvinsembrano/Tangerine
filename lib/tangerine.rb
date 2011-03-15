@@ -1,3 +1,4 @@
+require 'json'
 require 'active_support/inflector'
 require 'tangerine/backlot'
 require 'tangerine/backlot/base'

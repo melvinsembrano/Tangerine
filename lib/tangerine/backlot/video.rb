@@ -17,9 +17,13 @@ class Tangerine::Video < Tangerine::Base
     :metadata,
     :stat
 
-  def self.all
-    Tangerine.query('contentType' => 'Video')
+  finder do
+    Tangerine.query('contentType' => 'Video').parsed_response['list']['item']
   end
+
+  # def self.all
+    # Tangerine.query('contentType' => 'Video')
+  # end
 
   def initialize(options={})
     @options = options
@@ -42,6 +46,26 @@ class Tangerine::Video < Tangerine::Base
     items = result.parsed_response['list']['item']
     items = Tangerine::Base.prepare_items(items)
     items.collect { |item| Tangerine::Video.new(item) }
+  end
+
+  def to_json(options = {})
+    {:size => size,
+     :title => title,
+     :thumbnail => thumbnail,
+     :content => content,
+     :updated_at => updated_at,
+     :embed_code => embed_code,
+     :description => description,
+     :length => length,
+     :status => status,
+     :uploaded_at => uploaded_at,
+     :flight_start_time => flight_start_time,
+     :width => width,
+     :height => height,
+     :labels => labels,
+     :metadata => metadata,
+     :stat => stat
+    }.to_json
   end
 
   protected

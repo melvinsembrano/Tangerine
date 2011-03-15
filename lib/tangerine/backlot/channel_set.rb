@@ -17,6 +17,10 @@ class Tangerine::ChannelSet < Tangerine::Base
     response.parsed_response['list']['item']
   end
 
+  def to_json(options = {})
+    {:channels => channels}.to_json
+  end
+
   def channels
     result = Tangerine::Backlot::API.get('/channel_sets', 'mode' => 'list', 'channelSetEmbedCode' => embed_code)
     items = result.parsed_response['channelSet']['channel']
