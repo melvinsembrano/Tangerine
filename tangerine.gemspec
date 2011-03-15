@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{tangerine}
-  s.version = "0.4.0"
+  s.version = "0.5.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Anthony Navarre"]
-  s.date = %q{2011-03-10}
+  s.authors = ["Anthony Navarre", "Craig Williams"]
+  s.date = %q{2011-03-15}
   s.description = %q{Ooyala Backlot API Wrapper. Read more about the Ooyala Backlot API at http://www.ooyala.com/support/docs/backlot_api}
   s.email = %q{anthony.navarre@factorylabs.com}
   s.extra_rdoc_files = [
@@ -33,25 +33,29 @@ Gem::Specification.new do |s|
     "lib/tangerine/backlot/base.rb",
     "lib/tangerine/backlot/channel.rb",
     "lib/tangerine/backlot/channel_set.rb",
+    "lib/tangerine/backlot/player.rb",
     "lib/tangerine/backlot/video.rb",
     "spec/spec_helper.rb",
     "spec/support/authentication.rb",
     "spec/support/functionally_equivalent.rb",
     "spec/support/tangerine_girl.rb",
-    "spec/support/vcr_cassettes/Tangerine_Backlot_API_get_channel_sets_list_.yml",
-    "spec/support/vcr_cassettes/Tangerine_Query_new_contentType_MultiChannel_.yml",
-    "spec/support/vcr_cassettes/Tangerine_Video_all.yml",
+    "spec/support/vcr_cassettes/channel_sets/show.yml",
+    "spec/support/vcr_cassettes/channels/list.yml",
+    "spec/support/vcr_cassettes/query/channel_sets.yml",
+    "spec/support/vcr_cassettes/query/embed_code.yml",
     "spec/support/vcr_support.rb",
     "spec/tangerine/backlot_spec.rb",
     "spec/tangerine/base_spec.rb",
     "spec/tangerine/channel_set_spec.rb",
+    "spec/tangerine/channel_spec.rb",
+    "spec/tangerine/player_spec.rb",
     "spec/tangerine/video_spec.rb",
     "tangerine.gemspec"
   ]
   s.homepage = %q{http://github.com/factorylabs/tangerine}
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.6.0}
+  s.rubygems_version = %q{1.5.0}
   s.summary = %q{Ooyala Backlot API Wrapper}
   s.test_files = [
     "spec/spec_helper.rb",
@@ -62,6 +66,8 @@ Gem::Specification.new do |s|
     "spec/tangerine/backlot_spec.rb",
     "spec/tangerine/base_spec.rb",
     "spec/tangerine/channel_set_spec.rb",
+    "spec/tangerine/channel_spec.rb",
+    "spec/tangerine/player_spec.rb",
     "spec/tangerine/video_spec.rb"
   ]
 
@@ -80,6 +86,7 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<vcr>, ["= 1.7.0"])
       s.add_development_dependency(%q<fakeweb>, ["= 1.3.0"])
       s.add_development_dependency(%q<timecop>, ["= 0.3.5"])
+      s.add_development_dependency(%q<factory_girl>, ["= 1.3.3"])
       s.add_development_dependency(%q<ruby-debug>, ["= 0.10.4"])
       s.add_runtime_dependency(%q<httparty>, [">= 0"])
     else
@@ -94,6 +101,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<vcr>, ["= 1.7.0"])
       s.add_dependency(%q<fakeweb>, ["= 1.3.0"])
       s.add_dependency(%q<timecop>, ["= 0.3.5"])
+      s.add_dependency(%q<factory_girl>, ["= 1.3.3"])
       s.add_dependency(%q<ruby-debug>, ["= 0.10.4"])
       s.add_dependency(%q<httparty>, [">= 0"])
     end
@@ -109,6 +117,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<vcr>, ["= 1.7.0"])
     s.add_dependency(%q<fakeweb>, ["= 1.3.0"])
     s.add_dependency(%q<timecop>, ["= 0.3.5"])
+    s.add_dependency(%q<factory_girl>, ["= 1.3.3"])
     s.add_dependency(%q<ruby-debug>, ["= 0.10.4"])
     s.add_dependency(%q<httparty>, [">= 0"])
   end
