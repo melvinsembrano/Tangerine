@@ -7,17 +7,17 @@ describe Tangerine::Channel do
 
     describe '#videos' do
       let(:channel_set) do
-        TangerineGirl.create(:channel_set)
+        Factory.build(:channel_set)
       end
 
       let(:channel) do
-        TangerineGirl.create(:channel, :embed_code => '9haTdiMjoVHPey7H15JCroS9tJ25Xzw2')
+        Factory.build(:channel, :embed_code => '9haTdiMjoVHPey7H15JCroS9tJ25Xzw2')
       end
 
       let(:videos) do
         [
-          TangerineGirl.create(:video, :embed_code => embed_codes.first, :title => title),
-          TangerineGirl.create(:video, :embed_code => embed_codes[1])
+          Factory.build(:video, :embed_code => embed_codes.first, :title => title),
+          Factory.build(:video, :embed_code => embed_codes[1])
         ]
       end
 
@@ -27,7 +27,6 @@ describe Tangerine::Channel do
 
       before do
         Tangerine::Video.stub(:where).with(:embed_code => embed_codes).and_return(videos)
-        # Tangerine.stub(:query).with('embedCode' => embed_codes.join(',')).and_return(videos)
         channel_set.stub(:channels).and_return([channel])
         pause_vcr "channels/list", vcr_erb
       end

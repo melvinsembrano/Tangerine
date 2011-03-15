@@ -6,5 +6,3 @@ require 'tangerine/backlot/channel_set'
 require 'tangerine/backlot/video'
 require 'tangerine/backlot/player'
 
-require 'tangerine_girl'
-
