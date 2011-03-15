@@ -1,6 +1,6 @@
 class Tangerine::Base
 
-  def initialize(options)
+  def initialize(options={})
     options.delete('content_type')
     options.each do |k,v|
       # TODO: Look into using Crack gem for reliably undercoring these

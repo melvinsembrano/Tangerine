@@ -7,10 +7,10 @@ describe Tangerine::ChannelSet do
   let(:title) { 'My Awesome Title' }
   let(:mock_channel_set) { double(:embed_code => embed_code, :title => title) }
   let(:vcr_erb) { {:channel_sets => channel_sets} }
-  let(:channel_set) { TangerineGirl.create(:channel_set, :embed_code => embed_code, :title => title) }
+  let(:channel_set) { Factory.build(:channel_set, :embed_code => embed_code, :title => title) }
   let(:channel_sets) do
     channel_sets = []
-    5.times { channel_sets << TangerineGirl.create(:channel_set) }
+    5.times { channel_sets << Factory.build(:channel_set) }
     channel_sets << channel_set
     channel_sets
   end

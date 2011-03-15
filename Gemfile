@@ -15,5 +15,6 @@ group :development do
   gem "vcr", "1.7.0"
   gem "fakeweb", "1.3.0"
   gem "timecop", "0.3.5"
+  gem "factory_girl", "1.3.3"
   gem "ruby-debug", "0.10.4"
 end
