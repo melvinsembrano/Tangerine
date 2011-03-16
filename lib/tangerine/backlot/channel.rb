@@ -23,6 +23,8 @@ class Tangerine::Channel < Tangerine::Base
   end
 
   def to_json(options = {})
+    # TODO: Figure out why rails needs this to be called so badly
+    vids = videos
     {:size => size,
      :title => title,
      :thumbnail => thumbnail,
@@ -32,7 +34,7 @@ class Tangerine::Channel < Tangerine::Base
      :length => length,
      :status => status,
      :uploaded_at => uploaded_at,
-     :videos => videos
+     :videos => vids
     }.to_json
   end
 end
