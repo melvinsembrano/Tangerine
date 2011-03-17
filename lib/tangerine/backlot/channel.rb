@@ -22,9 +22,10 @@ class Tangerine::Channel < Tangerine::Base
     Tangerine::Video.where(:embed_code => embed_codes)
   end
 
-  def to_json(options = {})
+  def as_json(options = {})
     # TODO: Figure out why rails needs this to be called so badly
     vids = videos
+
     {:size => size,
      :title => title,
      :thumbnail => thumbnail,
@@ -35,6 +36,6 @@ class Tangerine::Channel < Tangerine::Base
      :status => status,
      :uploaded_at => uploaded_at,
      :videos => vids
-    }.to_json
+    }
   end
 end

@@ -17,6 +17,10 @@ class Tangerine::ChannelSet < Tangerine::Base
     response.parsed_response['list']['item']
   end
 
+  def as_json(options = {})
+    {:channels => channels}
+  end
+
   def to_json(options = {})
     {:channels => channels}.to_json
   end

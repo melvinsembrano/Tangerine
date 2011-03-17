@@ -48,7 +48,7 @@ class Tangerine::Video < Tangerine::Base
     items.collect { |item| Tangerine::Video.new(item) }
   end
 
-  def to_json(options = {})
+  def as_json(options = {})
     {:size => size,
      :title => title,
      :thumbnail => thumbnail,
@@ -65,7 +65,7 @@ class Tangerine::Video < Tangerine::Base
      :labels => labels,
      :metadata => metadata,
      :stat => stat
-    }.to_json
+    }
   end
 
   protected
