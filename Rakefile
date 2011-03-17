@@ -22,7 +22,7 @@ Jeweler::Tasks.new do |gem|
   # Dependencies
   gem.add_dependency 'httparty'
   gem.add_dependency 'activesupport'
-  gem.add_dependency 'json'
+  gem.add_dependency 'json', '= 1.4.6'
 end
 Jeweler::RubygemsDotOrgTasks.new
 
