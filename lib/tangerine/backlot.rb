@@ -13,8 +13,9 @@ module Tangerine
     class API
 
       def self.authenticate!(credentials)
-        @secret = credentials[:secret]
-        HTTP.default_params :pcode => credentials[:provider_code]
+        creds = HashWithIndifferentAccess.new credentials
+        @secret = creds[:secret]
+        HTTP.default_params :pcode => creds[:provider_code]
       end
 
       def self.get(request_type, params={})
