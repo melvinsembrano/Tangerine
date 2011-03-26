@@ -42,12 +42,12 @@ class Tangerine::Video < Tangerine::Base
 
   def self.where(options)
     embed_codes = options[:embed_code].join(',')
-    result = Tangerine.query('embedCode' => embed_codes, 'fields' => 'labels,metadata')
-    items = result.parsed_response['list']['item']
-    items = Tangerine::Base.prepare_items(items)
-    items.collect { |item| Tangerine::Video.new(item) }
-    
-    Tangerine::Video.order_videos!(items, options[:embed_code])
+    result      = Tangerine.query('embedCode' => embed_codes, 'fields' => 'labels,metadata')
+    items       = result.parsed_response['list']['item']
+    items       = Tangerine::Base.prepare_items(items)
+    videos      = items.collect { |item| Tangerine::Video.new(item) }
+
+    Tangerine::Video.order_videos!(videos, options[:embed_code])
   end
   
   def self.order_videos!(videos, embed_codes)
@@ -55,7 +55,7 @@ class Tangerine::Video < Tangerine::Base
     embed_codes.each do |code|
       ordered << videos.select { |video| video.embed_code == code }
     end
-    ordered
+    ordered.flatten
   end
 
   def as_json(options = {})
