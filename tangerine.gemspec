@@ -75,10 +75,10 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<httparty>, ["= 0.7.4"])
-      s.add_runtime_dependency(%q<activesupport>, ["= 3.0.5"])
-      s.add_runtime_dependency(%q<json>, ["= 1.5.1"])
-      s.add_runtime_dependency(%q<i18n>, ["= 0.5.0"])
+      s.add_runtime_dependency(%q<httparty>, ["~> 0.7.4"])
+      s.add_runtime_dependency(%q<activesupport>, ["~> 3.0.5"])
+      s.add_runtime_dependency(%q<json>, [">= 1.4.6"])
+      s.add_runtime_dependency(%q<i18n>, ["~> 0.5.0"])
       s.add_development_dependency(%q<rspec>, ["~> 2.3.0"])
       s.add_development_dependency(%q<yard>, ["~> 0.6.0"])
       s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
@@ -93,10 +93,10 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<activesupport>, [">= 0"])
       s.add_runtime_dependency(%q<json>, ["= 1.4.6"])
     else
-      s.add_dependency(%q<httparty>, ["= 0.7.4"])
-      s.add_dependency(%q<activesupport>, ["= 3.0.5"])
-      s.add_dependency(%q<json>, ["= 1.5.1"])
-      s.add_dependency(%q<i18n>, ["= 0.5.0"])
+      s.add_dependency(%q<httparty>, ["~> 0.7.4"])
+      s.add_dependency(%q<activesupport>, ["~> 3.0.5"])
+      s.add_dependency(%q<json>, [">= 1.4.6"])
+      s.add_dependency(%q<i18n>, ["~> 0.5.0"])
       s.add_dependency(%q<rspec>, ["~> 2.3.0"])
       s.add_dependency(%q<yard>, ["~> 0.6.0"])
       s.add_dependency(%q<bundler>, ["~> 1.0.0"])
@@ -112,10 +112,10 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<json>, ["= 1.4.6"])
     end
   else
-    s.add_dependency(%q<httparty>, ["= 0.7.4"])
-    s.add_dependency(%q<activesupport>, ["= 3.0.5"])
-    s.add_dependency(%q<json>, ["= 1.5.1"])
-    s.add_dependency(%q<i18n>, ["= 0.5.0"])
+    s.add_dependency(%q<httparty>, ["~> 0.7.4"])
+    s.add_dependency(%q<activesupport>, ["~> 3.0.5"])
+    s.add_dependency(%q<json>, [">= 1.4.6"])
+    s.add_dependency(%q<i18n>, ["~> 0.5.0"])
     s.add_dependency(%q<rspec>, ["~> 2.3.0"])
     s.add_dependency(%q<yard>, ["~> 0.6.0"])
     s.add_dependency(%q<bundler>, ["~> 1.0.0"])
