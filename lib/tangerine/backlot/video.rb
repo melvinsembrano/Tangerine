@@ -46,6 +46,16 @@ class Tangerine::Video < Tangerine::Base
     items = result.parsed_response['list']['item']
     items = Tangerine::Base.prepare_items(items)
     items.collect { |item| Tangerine::Video.new(item) }
+    
+    Tangerine::Video.order_videos!(items, options[:embed_code])
+  end
+  
+  def self.order_videos!(videos, embed_codes)
+    ordered = []
+    embed_codes.each do |code|
+      ordered << videos.select { |video| video.embed_code == code }
+    end
+    ordered
   end
 
   def as_json(options = {})
