@@ -42,7 +42,7 @@ class Tangerine::Video < Tangerine::Base
 
   def self.where(options)
     embed_codes = options[:embed_code].join(',')
-    result      = Tangerine.query('embedCode' => embed_codes, 'fields' => 'labels,metadata')
+    result      = Tangerine.query('embedCode' => embed_codes, 'fields' => 'labels,metadata', 'status' => 'live')
     items       = result.parsed_response['list']['item']
     items       = Tangerine::Base.prepare_items(items)
     videos      = items.collect { |item| Tangerine::Video.new(item) }
