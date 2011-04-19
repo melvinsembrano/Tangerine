@@ -41,11 +41,14 @@ class Tangerine::Video < Tangerine::Base
   end
 
   def self.where(options)
+    # FYI
+    # Adding 'status' => 'live' to the query string does not work!
     embed_codes = options[:embed_code].join(',')
-    result      = Tangerine.query('embedCode' => embed_codes, 'fields' => 'labels,metadata', 'status' => 'live')
+    result      = Tangerine.query('embedCode' => embed_codes, 'fields' => 'labels,metadata')
     items       = result.parsed_response['list']['item']
     items       = Tangerine::Base.prepare_items(items)
     videos      = items.collect { |item| Tangerine::Video.new(item) }
+    videos      = videos.reject { |video| video.status != 'live' }
 
     Tangerine::Video.order_videos!(videos, options[:embed_code])
   end
