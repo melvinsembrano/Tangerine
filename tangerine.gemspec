@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{tangerine}
-  s.version = "0.5.6"
+  s.version = "0.5.7"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Anthony Navarre", "Craig Williams"]
-  s.date = %q{2011-03-30}
+  s.date = %q{2011-04-19}
   s.description = %q{Ooyala Backlot API Wrapper. Read more about the Ooyala Backlot API at http://www.ooyala.com/support/docs/backlot_api}
   s.email = %q{anthony.navarre@factorylabs.com}
   s.extra_rdoc_files = [
