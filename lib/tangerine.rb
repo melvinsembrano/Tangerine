@@ -1,5 +1,6 @@
 require 'json'
 require 'active_support/inflector'
+require 'active_support/hash_with_indifferent_access'
 require 'tangerine/backlot'
 require 'tangerine/backlot/base'
 require 'tangerine/backlot/channel'
