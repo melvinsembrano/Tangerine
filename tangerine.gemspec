@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{tangerine}
-  s.version = "0.5.7"
+  s.version = "0.6.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Anthony Navarre", "Craig Williams"]
-  s.date = %q{2011-04-19}
+  s.date = %q{2011-04-29}
   s.description = %q{Ooyala Backlot API Wrapper. Read more about the Ooyala Backlot API at http://www.ooyala.com/support/docs/backlot_api}
   s.email = %q{anthony.navarre@factorylabs.com}
   s.extra_rdoc_files = [
@@ -55,7 +55,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/factorylabs/tangerine}
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.5.0}
+  s.rubygems_version = %q{1.4.2}
   s.summary = %q{Ooyala Backlot API Wrapper}
   s.test_files = [
     "spec/spec_helper.rb",
