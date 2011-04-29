@@ -95,7 +95,8 @@ class Tangerine::Video < Tangerine::Base
     meta_data = @options['metadata']['metadataItem']
     items = Tangerine::Base.prepare_items(meta_data)
     items.each do |meta_item|
-      self.metadata[meta_item['name'].to_sym] = meta_item['value']
+      meta_key = meta_item['name'].downcase.gsub(' ', '_').to_sym
+      self.metadata[meta_key] = meta_item['value']
     end
   end
 end
