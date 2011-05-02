@@ -5,9 +5,9 @@ class Tangerine::Base
     options.each do |k,v|
       # TODO: Look into using Crack gem for reliably undercoring these
       attr = k.to_s.underscore
-      method = "#{attr}="
+      method = :"#{attr}="
 
-      self.send(method, v) if self.class.instance_methods(false).include?(method)
+      self.send(method, v) if self.class.method_defined?(method)
     end
   end
 
