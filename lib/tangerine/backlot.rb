@@ -5,6 +5,8 @@ require 'digest/sha2'
 module Tangerine
   module Backlot
 
+    class NotAuthenticatedError < RuntimeError; end
+
     class HTTP
       include HTTParty
       base_uri 'http://api.ooyala.com/partner'
@@ -19,6 +21,8 @@ module Tangerine
       end
 
       def self.get(request_type, params={})
+        raise NotAuthenticatedError unless self.authenticated?
+
         params['expires'] ||= (Time.now.to_i + 10).to_s
         params['signature'] = self.signature(params)
         HTTP.get(request_type, {:query => params})
@@ -30,6 +34,10 @@ module Tangerine
         end
         digest = Digest::SHA256.digest(string_to_sign)
         Base64::encode64(digest).chomp.gsub(/=+$/, '')
+      end
+
+      def self.authenticated?
+        @secret && HTTP.default_params[:pcode]
       end
 
     end
